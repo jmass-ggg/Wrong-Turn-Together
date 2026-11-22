@@ -1,0 +1,36 @@
+{
+  "name": "tow-together-devvit",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config vite.local.config.ts",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.client.json",
+    "test": "npm run test:unit && npm run test:browser && npm run test:rooms",
+    "test:unit": "node --import tsx --test tests/room-service.test.ts tests/winch-physics.test.ts tests/bridge-physics.test.ts tests/adventure-state.test.ts tests/character-asset.test.ts",
+    "test:browser": "node tests/browser-smoke.mjs",
+    "test:rooms": "node tests/rooms-integration.mjs",
+    "test:route-rescue": "node tests/route-start-rescue.mjs",
+    "test:route-bridge": "TOW_TEST_BRIDGE=1 node tests/route-start-rescue.mjs",
+    "local:rooms": "tsx src/server/local.ts",
+    "playtest": "devvit playtest"
+  },
+  "dependencies": {
+    "@devvit/start": "0.15.4",
+    "@devvit/web": "0.15.4",
+    "@dimforge/rapier3d-compat": "0.21.0",
+    "hono": "^4.13.19",
+    "three": "^0.181.0"
+  },
+  "devDependencies": {
+    "@hono/node-server": "^1.19.19",
+    "@types/three": "^0.181.0",
+    "devvit": "^0.15.4",
+    "playwright-core": "^1.65.1",
+    "redis": "^5.12.4",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0"
+  }
+}

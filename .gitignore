@@ -1,0 +1,38 @@
+# Rust
+/target/
+
+# Godot
+game/.godot/
+game/bin/**/*.dylib
+game/bin/**/*.so
+game/bin/**/*.dll
+game/bin/**/*.pdb
+/export/
+
+# OS / editors
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Asset pipeline (re-downloadable / regenerated)
+art-src/cache/
+art-src/build/
+__pycache__/
+
+# Local agent / editor settings
+.claude/settings.local.json
+
+# Stamped by CI (tools/ci/write_build_info.sh)
+game/build_info.cfg
+
+# Secrets (API keys for asset generation)
+.env
+.env.*
+
+# Agent worktrees
+.claude/worktrees/
+
+# Devvit Web build artifacts
+web/node_modules/
+web/dist/

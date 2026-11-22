@@ -1,0 +1,34 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "name": "tow-together-rv",
+  "post": {
+    "dir": "dist/client",
+    "entrypoints": {
+      "default": {
+        "entry": "index.html",
+        "height": "tall"
+      }
+    }
+  },
+  "server": {
+    "dir": "dist/server",
+    "entry": "index.cjs"
+  },
+  "menu": {
+    "items": [
+      {
+        "label": "Create a Wrong Turn Together road trip",
+        "description": "Create an interactive mountain run post",
+        "location": "subreddit",
+        "endpoint": "/internal/menu/create-post"
+      }
+    ]
+  },
+  "scripts": {
+    "dev": "vite build --watch"
+  },
+  "permissions": {
+    "redis": true,
+    "realtime": true
+  }
+}
